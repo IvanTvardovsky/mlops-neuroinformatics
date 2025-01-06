@@ -1,0 +1,21 @@
+<!-- templates/table.html -->
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Дата</th>
+            <th>Цена BTC</th>
+            <th>Прогноз</th>
+            <th>Инвестиционная стоимость</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for index, row in data.iterrows() %}
+        <tr>
+            <td>{{ index }}</td>
+            <td>{{ row['BTC Price'] }}</td>
+            <td>{{ row['Prediction'] }}</td>
+            <td>{{ row['Investment Value'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

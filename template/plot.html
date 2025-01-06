@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>График цены BTC и инвестиций</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        #plotly-plot {
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>График цены BTC и инвестиций</h1>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Интерактивный график</h3>
+                <div id="plotly-plot">
+                    {{ plot_url | safe }}
+                </div>
+            </div>
+        </div>
+        
+        <form method="POST" class="form-inline justify-content-center">
+            <div class="form-group">
+                <label for="starting_value">Начальная сумма:</label>
+                <input type="number" id="starting_value" name="starting_value" step="0.01" value="{{ starting_value }}" class="form-control mx-2">
+            </div>
+            <input type="submit" value="Обновить" class="btn btn-primary">
+        </form>
+        
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h3>Таблица данных</h3>
+                {% include 'table.html' %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
