@@ -8,4 +8,4 @@ RUN pip install -r /code/requirements.txt
 
 EXPOSE 1488
 
-CMD ["python", "/code/app.py"]
+CMD ["python", "/code/web_app.py"]
