@@ -104,4 +104,4 @@ def plot():
     return render_template('plot.html', plot_url=plot_url, starting_value=starting_value, data=table_data)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=1488)
