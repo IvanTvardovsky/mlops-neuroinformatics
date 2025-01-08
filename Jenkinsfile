@@ -44,7 +44,7 @@ pipeline {
             steps {
                 dir('mlops-neuroinformatics'){
                     sh 'sudo docker stop $(sudo docker container ls -q)'
-                    sh 'sudo docker run -it -p 1488:1488--detach $(sudo docker build -q .)'
+                    sh 'sudo docker run -it -p 1488:1488 --detach $(sudo docker build -q .)'
                 }
             }
         }
