@@ -1,1 +1,3 @@
 # mlops-neuroinformatics
+
+пук
